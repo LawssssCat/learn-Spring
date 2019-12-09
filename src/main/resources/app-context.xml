@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="provider" 
+	class="spring5.chapter2.helloworld.HelloWroldMessageProvider"/>
+	<bean id="reader" 
+	class="spring5.chapter2.helloworld.HelloWroldMessageProvider" 
+	p:provider-ref="provider"/>
+</beans>
