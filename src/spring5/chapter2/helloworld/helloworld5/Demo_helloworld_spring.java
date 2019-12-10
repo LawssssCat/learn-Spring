@@ -1,13 +1,15 @@
 package spring5.chapter2.helloworld.helloworld5;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring5.chapter2.helloworld.helloworld3.MessageReader;
 
-public class Demo_helloworld_spring {
+public class Demo_HelloWorld_Spring {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring5/chapter2/helloworld/helloworld5/applicationContext.xml");
-		MessageReader mr = ctx.getBean("reader",MessageReader.class);
-		mr.reader();
+		String resource = "spring5/chapter2/helloworld/helloworld5/applicationContext.xml" ; 
+		ApplicationContext ac = new ClassPathXmlApplicationContext(resource) ; 
+		MessageReader ms = ac.getBean("reader" , MessageReader.class);
+		ms.reader();
 	}
 }

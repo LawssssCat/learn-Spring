@@ -1,4 +1,4 @@
-package spring5.chapter2.helloworld;
+package spring5.chapter2.helloworld.helloworld2;
 
 import java.util.Arrays;
 

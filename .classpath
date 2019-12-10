@@ -4,7 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/spring-beans-4.0.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-4.0.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring-context-4.0.0.RELEASE.jar" sourcepath="lib/spring-context-4.0.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-core-4.0.0.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-4.0.0.RELEASE.jar"/>
 	<classpathentry kind="output" path="bin"/>
