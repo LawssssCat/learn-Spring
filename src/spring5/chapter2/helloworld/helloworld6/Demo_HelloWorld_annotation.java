@@ -9,11 +9,10 @@ public class Demo_HelloWorld_annotation {
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException {
 		Class<HelloWorldConfigure> clazz = 
 				HelloWorldConfigure.class ;
-		HelloWorldConfigure newInstance = clazz.newInstance();
-		System.out.println(clazz.getName());
-		
 		ApplicationContext ac = 
 				new AnnotationConfigApplicationContext(clazz);
+		MessageReader ms = ac.getBean("reader", MessageReader.class);
+		ms.reader();
 		
 	}
 }
