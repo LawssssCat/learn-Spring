@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[3.9.9.201906180643-RELEASE]]></pluginVersion>
+	<pluginVersion><![CDATA[3.9.10.201909171046-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/spring5/chapter2/helloworld/helloworld5/applicationContext.xml</config>
-		<config>src/spring5/chapter3/beanfactory/xml-bean-factory-config.xml</config>
+		<config>src/spring5/vedio/beanrelation/beans-relation.xml</config>
+		<config>src/resource/vedio/beans-scope.xml</config>
+		<config>src/spring5/vedio/jdbc/beans-properties.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
