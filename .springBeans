@@ -8,6 +8,7 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/spring5/chapter2/helloworld/helloworld5/applicationContext.xml</config>
+		<config>src/spring5/chapter3/beanfactory/xml-bean-factory-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
