@@ -9,7 +9,7 @@
 	<configs>
 		<config>src/spring5/chapter2/helloworld/helloworld5/applicationContext.xml</config>
 		<config>src/resource/vedio/beans-spel.xml</config>
-		<config>src/resource/book/chapter3-applicationcontext.xml</config>
+		<config>src/resource/book/chapter3-autowired.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
