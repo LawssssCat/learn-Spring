@@ -1,5 +1,7 @@
 package spring5.book.chapter3;
 
+import java.util.jar.Attributes.Name;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -23,12 +25,15 @@ public class StandardOutMessageReader_Service_autowire implements MessageReader 
 		System.out.println(provider.getMassage());
 	}
 	
-	//TODO 为什么会到old？
-	@Autowired
+	/*
+	 * 如果有多个相同类型参数
+	 * Autowired根据形参名选择
+	 */
+	@Autowired()
 	@Override
-	public void setMessageProvider(MessageProvider provider) {
-		System.out.println("set provider ...autowire...");
-		this.provider=provider ; 
+	public void setMessageProvider(MessageProvider provider99) {
+		System.out.println("set provider ...autowire..."+ provider99.getClass().getName());
+		this.provider=provider99 ; 
 	}
 
 	@Override

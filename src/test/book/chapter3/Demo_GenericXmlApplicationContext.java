@@ -22,11 +22,16 @@ public class Demo_GenericXmlApplicationContext {
 		gxac.load(
 				"classpath:resource/book/h_applicationContext-scanpackage.xml");
 		
+		System.out.println("---");
 		//没有refresh，会抛出IllegalStateException
 		//GenericXmlApplicationContext@7eda2dbb has not been refreshed yet
 		gxac.refresh();
 		
-		MessageReader mr = gxac.getBean("reader" , MessageReader.class);
+		System.out.println("---");
+		
+		MessageReader mr = (MessageReader) gxac.getBean("reader99");
+		
+		System.out.println("----");
 		
 		mr.reader();
 		
