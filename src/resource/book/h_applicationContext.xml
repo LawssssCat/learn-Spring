@@ -5,10 +5,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="provider"
-		class="spring5.chapter2.helloworld.HelloWroldMessageProvider">
+		class="spring5.book.chapter2.HelloWroldMessageProvider">
 	</bean>
 	<bean id="reader"
-		class="spring5.chapter2.helloworld.StandardOutMessageReader" 
+		class="spring5.book.chapter2.StandardOutMessageReader" 
 		p:messageProvider-ref="provider">
 	</bean>
 </beans>
