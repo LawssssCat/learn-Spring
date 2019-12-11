@@ -7,9 +7,9 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/spring5/chapter2/helloworld/helloworld5/applicationContext.xml</config>
 		<config>src/resource/vedio/beans-spel.xml</config>
-		<config>src/resource/book/chapter3-autowired.xml</config>
+		<config>src/resource/book/h_applicationContext.xml</config>
+		<config>src/resource/book/h_applicationContext-scanpackage.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

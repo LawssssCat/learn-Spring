@@ -1,4 +1,4 @@
-package spring5.chapter2.helloworld.helloworld3;
+package spring5.chapter3;
 
 public interface MessageReader {
 	void reader();

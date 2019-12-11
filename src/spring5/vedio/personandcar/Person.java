@@ -1,4 +1,4 @@
-package spring5.chapter2.helloworld.personandcar;
+package spring5.vedio.personandcar;
 
 import java.util.List;
 

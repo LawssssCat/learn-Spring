@@ -1,8 +1,8 @@
-package spring5.chapter2.helloworld.helloworld2;
+package spring5.test.book.chapter2;
 
 import java.util.Arrays;
 
-public class Demo_helloworld2 {
+public class Demo_helloworld1 {
 	public static void main(String[] args) {
 		if(args.length>0) {
 			System.out.println(Arrays.toString(args));

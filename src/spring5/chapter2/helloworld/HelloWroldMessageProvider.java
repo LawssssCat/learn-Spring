@@ -1,8 +1,5 @@
-package spring5.chapter2.helloworld.helloworld3;
+package spring5.chapter2.helloworld;
 
-import org.springframework.stereotype.Component;
-
-@Component("provider")
 public class HelloWroldMessageProvider implements MessageProvider {
 
 	@Override

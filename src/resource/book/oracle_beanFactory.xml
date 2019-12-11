@@ -9,5 +9,7 @@
 
 	
 
-	<bean id="oracle" name="wiseworm" class="spring5.chapter3.beanfactory.BookwormOracle"></bean>
+	<bean id="oracle" name="wiseworm" 
+	class="spring5.chapter3.beanfactory.BookwormOracle"></bean>
+	
 </beans>

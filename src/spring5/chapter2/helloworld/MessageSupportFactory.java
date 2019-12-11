@@ -1,10 +1,7 @@
-package spring5.chapter2.helloworld.helloworld4;
+package spring5.chapter2.helloworld;
 
 import java.io.IOException;
 import java.util.Properties;
-
-import spring5.chapter2.helloworld.helloworld3.MessageProvider;
-import spring5.chapter2.helloworld.helloworld3.MessageReader;
 
 /**
  * 单例模式-优点：
@@ -34,7 +31,14 @@ public class MessageSupportFactory {
 		//书上props作为成员变量，为什么？
 		Properties props = new Properties();
 		try {
-			props.load(this.getClass().getResourceAsStream("msf.properties"));
+			props.load(
+					getClass().
+					getResourceAsStream(
+							"/resource/book/h_factory.properties"));
+			/*
+			 *           / - bin/
+			 */
+			
 			String readerClass = props.getProperty("reader.class");
 			String providerClass = props.getProperty("provider.class");
 			
