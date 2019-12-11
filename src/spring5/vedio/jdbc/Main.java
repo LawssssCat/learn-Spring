@@ -13,19 +13,13 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 public class Main {
 	public static void main(String[] args) {
-//		ApplicationContext ac = new ClassPathXmlApplicationContext("resource/vedio/beans-properties.xml");
-//		ComboPooledDataSource pool = ac.getBean("dataSource" , ComboPooledDataSource.class) ;
-		ComboPooledDataSource pool = new ComboPooledDataSource();
+		ApplicationContext ac = new ClassPathXmlApplicationContext("resource/vedio/beans-properties.xml");
+		ComboPooledDataSource pool = ac.getBean("dataSource" , ComboPooledDataSource.class) ;
+
 		Connection conn  = null ;
 		PreparedStatement ps  = null ;
 		ResultSet rs = null ; 
 		try {
-			Class.forName("com.mysql.jdbc.Driver") ;
-			System.out.println("启动驱动成功...\n获取连接...");
-			
-			pool.setJdbcUrl("jdbc:mysql://127.0.0.1:3306/jt_db?characterEncoding=gbk");
-			pool.setUser("root");
-			pool.setPassword("root");
 			conn = pool.getConnection();
 			System.out.println("-- 获得连接 ：" + conn);
 			
@@ -35,9 +29,6 @@ public class Main {
 			System.out.println("-- 打印查询结果 --");
 			show(rs); 
 		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			close(conn , ps , rs ) ; 
