@@ -3,7 +3,7 @@ package test.video;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import spring5.vedio.beanrelation.Person;
+import spring5.vedio.Person;
 
 public class Demo_BeanRelation {
 	/*

@@ -3,7 +3,7 @@ package test.video;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import spring5.vedio.beanrelation.Car;
+import spring5.vedio.Car;
 
 public class Demo_ApplicationContext_Scope {
 	/**

@@ -20,6 +20,5 @@ public class Demo_AnnotationConfigApplicationContext {
 		 */
 		MessageReader ms = ac.getBean("reader123", MessageReader.class);
 		ms.reader();
-		
 	}
 }

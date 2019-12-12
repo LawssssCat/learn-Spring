@@ -10,6 +10,7 @@
 		<config>src/resource/vedio/beans-spel.xml</config>
 		<config>src/resource/book/h_applicationContext.xml</config>
 		<config>src/resource/book/h_applicationContext-scanpackage.xml</config>
+		<config>src/resource/vedio/beans-factory.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

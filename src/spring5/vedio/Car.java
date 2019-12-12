@@ -1,4 +1,4 @@
-package spring5.vedio.beanrelation;
+package spring5.vedio;
 
 public class Car {
 	String brank ; 
