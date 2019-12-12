@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
-@Service("reader99")
+@Service(value = "reader99")
 public class StandardOutMessageReader_Service_autowire implements MessageReader {
 	public StandardOutMessageReader_Service_autowire() {
 		System.out.println("new reader -- 99 ...");

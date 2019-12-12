@@ -5,6 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 //扫描包（子包）内标签
 //@Component、@Service、(会扫描，但这里没有@Controller、@Repository)
-@ComponentScan(basePackages = {"spring5.chapter3"})
+@ComponentScan(basePackages = {"spring5.book.chapter3"} )
 @Configuration
 public class HelloWorldConfiguration_ComponentScan {}

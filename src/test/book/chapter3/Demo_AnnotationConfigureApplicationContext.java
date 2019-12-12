@@ -19,8 +19,10 @@ public class Demo_AnnotationConfigureApplicationContext {
 		 * 可以通过 @Configure @Bean
 		 * 创建 需要手动组装的类
 		 */
-		AnnotationConfigApplicationContext ac0 = new AnnotationConfigApplicationContext(HelloWorldConfigure.class);
-		MessageReader ms0 = ac0.getBean("reader" , MessageReader.class );
+		AnnotationConfigApplicationContext ac0 = 
+				new AnnotationConfigApplicationContext(
+						HelloWorldConfigure.class);
+		MessageReader ms0 = ac0.getBean("reader99" , MessageReader.class );
 		ms0.reader();
 		
 		
