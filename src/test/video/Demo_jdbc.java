@@ -1,4 +1,4 @@
-package spring5.vedio.jdbc;
+package test.video;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
-public class Main {
+public class Demo_jdbc {
 	public static void main(String[] args) {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("resource/vedio/beans-properties.xml");
 		ComboPooledDataSource pool = ac.getBean("dataSource" , ComboPooledDataSource.class) ;
