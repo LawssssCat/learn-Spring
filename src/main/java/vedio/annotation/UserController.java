@@ -1,5 +1,6 @@
 package vedio.annotation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /*
@@ -13,11 +14,15 @@ import org.springframework.stereotype.Controller;
 /**
  * 表现层
  */
-@Controller
+@Controller("userController")
 public class UserController {
 	
+	@Autowired
+	UserService userService = null ;
+	
 	public void execute() {
-		System.out.println("UserController execute...表现层...");
+		userService.add();
+		System.out.println(this.getClass().getName()+" execute...表现层...");
 	}
 	
 }

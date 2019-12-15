@@ -16,7 +16,7 @@ public class HelloWorldConfigure {
 	 * 先有 "new provider ... "
 	 * 后有 "new reader ..."
 	 */
-	@Bean
+	@Bean(name = "reader99")
 	public MessageReader reader() {
 		System.out.println("new reader ... ");
 		MessageReader reader = new StandardOutMessageReader(); 

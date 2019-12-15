@@ -21,7 +21,7 @@ public class Demo_AnnotationConfigureApplicationContext {
 		 */
 		AnnotationConfigApplicationContext ac0 = 
 				new AnnotationConfigApplicationContext(HelloWorldConfigure.class);
-		MessageReader ms0 = ac0.getBean("reader" , MessageReader.class );
+		MessageReader ms0 = ac0.getBean("reader99" , MessageReader.class );
 		ms0.reader();
 		
 		
