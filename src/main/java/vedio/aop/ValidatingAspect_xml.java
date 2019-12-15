@@ -8,12 +8,9 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Aspect
-@Component
-public class ValidatingAspect_annotation {
-	
-	@Order(1)
-	@Before("LoginingAspect_annotation.declareJoinPointExpression() ")
+
+public class ValidatingAspect_xml {
+
 	public void validatingArgs(JoinPoint joinPoint) {
 		String methodName = joinPoint.getSignature().getName();
 		Object[] args = joinPoint.getArgs();

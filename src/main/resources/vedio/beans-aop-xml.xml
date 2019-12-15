@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+<!-- 配置bean -->
+<bean id="calculator" class="vedio.aop.CalculatorImp_aop"></bean>
+
+<!-- 配置切面bean -->
+<bean id="loginingAspect" class="vedio.aop.LoginingAspect_xml"></bean>
+<bean id="validatingAspect" class="vedio.aop.ValidatingAspect_xml"></bean> 
+<!-- 配置AOP -->
+<aop:config >
+	<!-- 配置切点 - 表达式 -->
+	<aop:pointcut  expression="execution(int vedio.proxy.Calculator.*(int ,int ))" id="calcPointcut" />
+	<!-- 配置切面、通知 -->
+ 	<aop:aspect order="1" ref="validatingAspect" >
+		<aop:before method="validatingArgs" pointcut-ref="calcPointcut"  /> 
+	</aop:aspect>
+	<aop:aspect order="2" ref="loginingAspect">
+		<!-- 前置 -->
+		<aop:before method="beforMethod" pointcut-ref="calcPointcut"/>
+		<!-- 后置 -->
+		<aop:after method="afterMethod" pointcut-ref="calcPointcut"/>
+		<!-- 返回 -->
+		<aop:after-returning method="afterReturningMethod" pointcut-ref="calcPointcut" returning="result"/>
+		<!-- 异常 -->
+		<aop:after-throwing method="afterThrowingMethod" pointcut-ref="calcPointcut" throwing="ex"/>
+		
+		<!-- 环绕 
+		<aop:around method="aroundMethod" pointcut-ref=""/>
+		-->
+	</aop:aspect>
+</aop:config>
+
+</beans>
