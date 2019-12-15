@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 静态工厂  -->
+	<bean id="c1" class="vedio.factory.StaticCarFactory" 
+	factory-method="getCar" >
+		<constructor-arg value="BMW"></constructor-arg>
+	</bean>
+	
+	<!-- 实例工厂 -->
+	<bean id="carfactory" class="vedio.factory.InstanceCarFactory"></bean>
+	<bean id="c2" factory-bean="carfactory" factory-method="getCar">
+		<constructor-arg value="Autio"></constructor-arg>
+	</bean>
+	
+	<!-- FactoryBean -->
+	<!-- 
+		通过 FactoryBean 来配置 Bean 的实例
+		class: 指向 FactoryBean 的全类名
+		property: 配置 FactoryBean 的属性
+		
+		但实际烦你的实例确实 FactoryBean 的 getObject() 方法返回的实例!
+	 -->
+	<bean id="c3" class="vedio.factory.MyCarFactoryBean">
+		<!-- 这里的 name 是 setXXX -->		
+		<property name="brankCC" value="AAAA"></property>
+	</bean>
+	
+</beans>
