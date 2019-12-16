@@ -13,23 +13,70 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+import vedio.Department;
 import vedio.Employee;
+import vedio.dao.DepartmentDao;
 import vedio.dao.EmployeeDao;
 
+/**
+ * spring jdbc ... 另外一个c3p0
+ *
+ */
 public class JDBCTest {
 
 	private ClassPathXmlApplicationContext cpax = null ;
 	private JdbcTemplate jdbcTemplate  = null ;
 	private EmployeeDao employeeDao = null ;
+	private DepartmentDao departmentDao = null ; 
+	private NamedParameterJdbcTemplate namedParameterJdbcTemplate = null ; 
 	{
-		cpax = new ClassPathXmlApplicationContext("vedio/applicationContext-jdbc.xml") ;
+		cpax = new ClassPathXmlApplicationContext(
+				"vedio/applicationContext-jdbc.xml") ;
+		
 		jdbcTemplate = cpax.getBean(JdbcTemplate.class);
-		employeeDao = cpax.getBean(EmployeeDao.class); 
+		employeeDao = cpax.getBean(EmployeeDao.class);
+		departmentDao = cpax.getBean(DepartmentDao.class) ;
+		namedParameterJdbcTemplate = 
+				cpax.getBean(NamedParameterJdbcTemplate.class) ;
+		
+	}
+	
+	/**
+	 * 使用居民参数时，可以使用 update(String sql , SqlParameterSource paramSource) 方法进行更新操作
+	 * 1. SQL 语句中的参数名和类的属性一致
+	 * 2. 使用 SqlParameterSource 的BeanPropertySqlParameterSource 实现类作为参数
+	 */
+	@Test
+	public void testNamedParameterJdbcTemplate2() {
+		
+	}
+	
+	/**
+	 * 可以为参数起名了！
+	 * 1. 好处：若有多个参数，则不用再去对应位置，直接对应参数名，便于维护。
+	 * 2. 缺点：较为麻烦 （x） 
+	 */
+	@Test
+	public void testNamedParameterJdbcTemplate() {
+		//冒号
+		//Insert Into emp(last_name, email , dept_id) values(:ln, :email , :deptid)
+		String sql = "Insert Into emp(last_name, email , dept_id) values(:ln, :email , :deptid)"; 
+		
+		//TODO
+		namedParameterJdbcTemplate.update(sql, paramMap)
 	}
 	
 	@Test
-	public void testEmployeeDao() {
+	public void testDepartmentDaoGet() {
+		Department department = departmentDao.get(1);
+		System.out.println(department);
+	}
+	
+	
+	@Test
+	public void testEmployeeDaoGet() {
 		Employee employee = employeeDao.get(1);
 		System.out.println(employee);
 	}
