@@ -40,5 +40,7 @@ public class StandardOutMessageReader_Service_autowire implements MessageReader 
 	public MessageProvider getMessageProvider() {
 		return provider;
 	}
+	
+	
 
 }
