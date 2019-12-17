@@ -3,8 +3,10 @@ package video;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -13,10 +15,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 import vedio.Department;
 import vedio.Employee;
+import vedio.Employee_deptId;
 import vedio.dao.DepartmentDao;
 import vedio.dao.EmployeeDao;
 
@@ -44,13 +49,23 @@ public class JDBCTest {
 	}
 	
 	/**
-	 * 使用居民参数时，可以使用 update(String sql , SqlParameterSource paramSource) 方法进行更新操作
+	 * 使用具名参数时，可以使用 update(String sql , SqlParameterSource paramSource) 方法进行更新操作
 	 * 1. SQL 语句中的参数名和类的属性一致
 	 * 2. 使用 SqlParameterSource 的BeanPropertySqlParameterSource 实现类作为参数
 	 */
 	@Test
-	public void testNamedParameterJdbcTemplate2() {
+	public void testNamedParameterJdbcTemplateInsert2() {
+		String sql = "Insert Into emp(last_name, email , dept_id) values(:name, :email , :dept_id);" ;
 		
+		
+		Employee_deptId emp = new Employee_deptId();
+		emp.setName("尼古拉斯");
+		emp.setEmail("22222222222@赵四");
+		emp.setDept_id(2);
+		
+		SqlParameterSource paramSource  = new BeanPropertySqlParameterSource(emp); 
+		
+		namedParameterJdbcTemplate.update(sql, paramSource) ; 
 	}
 	
 	/**
@@ -58,14 +73,19 @@ public class JDBCTest {
 	 * 1. 好处：若有多个参数，则不用再去对应位置，直接对应参数名，便于维护。
 	 * 2. 缺点：较为麻烦 （x） 
 	 */
-	@Test
-	public void testNamedParameterJdbcTemplate() {
+	//@Test
+	public void testNamedParameterJdbcTemplateInsert() {
 		//冒号
 		//Insert Into emp(last_name, email , dept_id) values(:ln, :email , :deptid)
 		String sql = "Insert Into emp(last_name, email , dept_id) values(:ln, :email , :deptid)"; 
 		
-		//TODO
-		namedParameterJdbcTemplate.update(sql, paramMap)
+		Map<String, Object > paramMap = new HashMap<>() ;
+		
+		paramMap.put("ln", "路飞") ;
+		paramMap.put("email", "1111111111@qq.com") ;
+		paramMap.put("deptid", "1") ;
+		
+		namedParameterJdbcTemplate.update(sql, paramMap) ; 
 	}
 	
 	@Test
