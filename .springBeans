@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beansProjectDescription>
 	<version>1</version>
-	<pluginVersion><![CDATA[3.9.9.201906180643-RELEASE]]></pluginVersion>
+	<pluginVersion><![CDATA[3.9.10.201909171046-RELEASE]]></pluginVersion>
 	<configSuffixes>
 		<configSuffix><![CDATA[xml]]></configSuffix>
 	</configSuffixes>
@@ -13,6 +13,7 @@
 		<config>src/main/resources/book/h_applicationContext-constructor2.xml</config>
 		<config>src/main/resources/book/h_applicationContext-annotation.xml</config>
 		<config>src/main/resources/vedio/applicationContext-jdbc.xml</config>
+		<config>src/main/resources/vedio/applicationContext-bookshop.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
