@@ -1,5 +1,8 @@
 package video;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jws.soap.SOAPBinding;
 
 import org.junit.Test;
@@ -20,6 +23,24 @@ public class Test_Transaction {
 	}
 	
 	@Test
+	public void testCheckout() {
+		String username="AA" ; 
+		List<String> isbns = new ArrayList<>();
+		isbns.add("1001") ;
+		isbns.add("1002");
+		
+		showStatus(username, isbns.get(0) , isbns.get(1));
+		try {
+			bookShopService.checkout(username, isbns);
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		showStatus(username, isbns.get(0) , isbns.get(1));
+		
+	}
+	
+	
+	//@Test
 	public void testPurchaseBook() {
 		String username  = "AA" ; 
 		String isbn = "1001" ; 
@@ -35,16 +56,18 @@ public class Test_Transaction {
 		showStatus(username, isbn);
 	}
 	
-	public void showStatus(String username , String isbn) {
-		String name = bookShopDao.findBookNameByIsbn(isbn);
-		int price = bookShopDao.findBookPriceByIsbn(isbn); 
-		int stock = bookShopDao.findBookStockByIsbn(isbn);
-		int balance = bookShopDao.findUserBalanceByUsername(username);
+	public void showStatus(String username , String ... isbns) {
 		System.out.println("-------------");
-		System.out.println("isbn"+isbn);
-		System.out.println("name="+ name);
-		System.out.println("price="+price);
-		System.out.println("stock="+stock);
+		for (String isbn : isbns) {
+			String bookname = bookShopDao.findBookNameByIsbn(isbn);
+			int price = bookShopDao.findBookPriceByIsbn(isbn); 
+			int stock = bookShopDao.findBookStockByIsbn(isbn);
+			System.out.println("isbn"+isbn);
+			System.out.println("bookname="+ bookname);
+			System.out.println("price="+price);
+			System.out.println("stock="+stock);
+		}
+		int balance = bookShopDao.findUserBalanceByUsername(username);
 		System.out.println("username:"+ username+ ",balance:"+balance);
 	}
 }
