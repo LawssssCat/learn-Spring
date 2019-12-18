@@ -3,8 +3,8 @@
   <groupId>cn.edut</groupId>
   <artifactId>learn-Spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- ==========  jdk1.8  ============ -->
   <build>
-    <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -18,12 +18,40 @@
   </build>
   
   <dependencies>
+  
+  
+<!-- ================    AspectJ    ======================  -->
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjweaver</artifactId>
+    <version>1.6.3</version>
+</dependency>
+  
+<!-- ================    spring     ======================  -->
 <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-context</artifactId>
     <version>4.0.0.RELEASE</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>4.0.0.RELEASE</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>4.0.0.RELEASE</version>
+</dependency>
+
+
+
+<!--================     SQL     ========================= -->
 <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
 <dependency>
     <groupId>com.mchange</groupId>
