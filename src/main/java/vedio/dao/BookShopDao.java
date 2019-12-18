@@ -2,11 +2,17 @@ package vedio.dao;
 
 public interface BookShopDao {
 	
+	/*==========  book  ====================*/
 	/**
 	 * 查询价格
 	 */
-	public int findBookPriceByIsbn(String isbn)  ; 
+	public int findBookPriceByIsbn(String isbn)  ;
+	/**
+	 * 查询书名 
+	 */
+	public String findBookNameByIsbn(String isbn) ;
 	
+	/*==========  book_stock  ==============*/
 	/**
 	 * 查询库存
 	 */
@@ -20,6 +26,7 @@ public interface BookShopDao {
 	 */
 	public void updateBookStockUpByIsbn(String isbn) ; 
 	
+	/*==========  account  =================*/
 	/**
 	 * 扣除用户余额
 	 */

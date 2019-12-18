@@ -3,6 +3,7 @@
   <groupId>cn.edut</groupId>
   <artifactId>learn-Spring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <!-- ==========  jdk1.8  ============ -->
   <build>
     <plugins>
       <plugin>

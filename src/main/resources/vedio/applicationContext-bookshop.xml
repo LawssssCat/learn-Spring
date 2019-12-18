@@ -2,11 +2,14 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
 <!-- 扫描的包 -->
 <context:component-scan base-package="vedio.dao"></context:component-scan> 
+<context:component-scan base-package="vedio.service"></context:component-scan> 
 
 
 <!-- 数据库配置 资源文件 -->
@@ -29,5 +32,15 @@
 </bean>
 
 
+<!-- 配置事务管理器 -->
+<!-- DataSourceTransactionManager -->
+<!-- 为transactionManager 添加 dataSource -->
+<!-- 加入ts命名空间 -->
+<!-- tx:annotation-driven id = ↑ -->
+<!-- 添加注解 @Transactional -->
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+<property name="dataSource" ref="dataSource"/>
+</bean>
+<tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

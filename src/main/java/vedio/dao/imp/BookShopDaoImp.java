@@ -22,6 +22,13 @@ public class BookShopDaoImp implements BookShopDao{
 		return jdbcTemplate.queryForObject(sql, Integer.class , isbn);
 	}
 	
+	@Override
+	public String findBookNameByIsbn(String isbn) {
+		String sql = "select bookname from book where isbn = ?" ; 
+		return jdbcTemplate.queryForObject(sql, String.class, isbn);
+	}
+	
+	
 	/*====================  book_stock  =================*/
 	@Override
 	public int findBookStockByIsbn(String isbn) {
