@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import vedio.dao.imp.BookShopDao;
+import vedio.dao.BookShopDao;
 
 public class Test_BookShop {
 	
@@ -31,7 +31,7 @@ public class Test_BookShop {
 	@Test
 	public void testBookStock() {
 		int stock = 0 ; 
-		int isbn = 1001;
+		String isbn = "1001";
 		
 		System.out.println("现有库存="+bookShopDao.findBookStockPriceByIsbn(isbn)  );
 		bookShopDao.updateBookStockDownByIsbn(isbn);
@@ -47,7 +47,7 @@ public class Test_BookShop {
 	public void testUpdateUserAccount() {
 		String username = "AA";
 		System.out.println("原预付款："+bookShopDao.findUserBalanceByUsername(username ));
-		int isbn = 1001 ; 
+		String isbn = "1001" ; 
 		int price = bookShopDao.findBookPriceByIsbn(isbn) ;
 		bookShopDao.updateUserAccount(username, price );
 		System.out.println("购书价格："+price);
@@ -60,7 +60,7 @@ public class Test_BookShop {
 	@Test
 	public void testFindBookPriceByIsbn() {
 		//这里，用int 基本类型会报错 
-		int price = bookShopDao.findBookPriceByIsbn(1001); //100
+		int price = bookShopDao.findBookPriceByIsbn("1001"); //100
 		System.out.println(price);
 	}
 	

@@ -1,24 +1,24 @@
-package vedio.dao.imp;
+package vedio.dao;
 
 public interface BookShopDao {
 	
 	/**
 	 * 查询价格
 	 */
-	public int findBookPriceByIsbn(int isbn)  ; 
+	public int findBookPriceByIsbn(String isbn)  ; 
 	
 	/**
 	 * 查询库存
 	 */
-	public int findBookStockPriceByIsbn(int isbn)  ; 
+	public int findBookStockPriceByIsbn(String isbn)  ; 
 	/**
 	 * 库存减一
 	 */
-	public void updateBookStockDownByIsbn(int isbn) ; 
+	public void updateBookStockDownByIsbn(String isbn) ; 
 	/**
 	 * 库存加一
 	 */
-	public void updateBookStockUpByIsbn(int isbn) ; 
+	public void updateBookStockUpByIsbn(String isbn) ; 
 	
 	/**
 	 * 增加用户预付款

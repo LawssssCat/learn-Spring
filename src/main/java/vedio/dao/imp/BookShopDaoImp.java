@@ -1,10 +1,10 @@
-package vedio.dao;
+package vedio.dao.imp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import vedio.dao.imp.BookShopDao;
+import vedio.dao.BookShopDao;
 
 @Repository
 public class BookShopDaoImp implements BookShopDao{
@@ -13,24 +13,24 @@ public class BookShopDaoImp implements BookShopDao{
 	private JdbcTemplate jdbcTemplate ;  
 	
 	@Override
-	public int findBookPriceByIsbn(int isbn) {
+	public int findBookPriceByIsbn(String isbn) {
 		String sql = "select price from book where isbn = ? " ; 
 		return jdbcTemplate.queryForObject(sql, Integer.class , isbn);
 	}
 	
 	@Override
-	public int findBookStockPriceByIsbn(int isbn) {
+	public int findBookStockPriceByIsbn(String isbn) {
 		String sql = "select stock from book_stock where isbn = ? " ; 
 		return jdbcTemplate.queryForObject(sql, Integer.class , isbn);
 	}
 
 	@Override
-	public void updateBookStockDownByIsbn(int isbn) {
+	public void updateBookStockDownByIsbn(String isbn) {
 		String sql = "update book_stock set stock=stock-1 where isbn = ? " ; 
 		jdbcTemplate.update(sql ,isbn) ; 
 	}
 	@Override
-	public void updateBookStockUpByIsbn(int isbn) {
+	public void updateBookStockUpByIsbn(String isbn) {
 		String sql = "update book_stock set stock=stock+1 where isbn = ? " ; 
 		jdbcTemplate.update(sql ,isbn) ; 
 		
