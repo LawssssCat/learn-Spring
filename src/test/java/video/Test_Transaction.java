@@ -10,19 +10,22 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import vedio.dao.BookShopDao;
 import vedio.service.BookShopService;
+import vedio.service.Cashier;
 
 public class Test_Transaction {
 	private ClassPathXmlApplicationContext ctx = null ;
 	private BookShopDao bookShopDao = null ;
-	private BookShopService bookShopService = null ; 
+	private BookShopService bookShopService = null ;
+	private Cashier cashier = null ; 
 	{
 		ctx = new ClassPathXmlApplicationContext(
 				"classpath:vedio/applicationContext-bookshop.xml") ;
 		bookShopDao = ctx.getBean(BookShopDao.class) ; 
-		bookShopService = ctx.getBean(BookShopService.class) ; 
+		bookShopService = ctx.getBean(BookShopService.class) ;
+		cashier = ctx.getBean(Cashier.class) ; 
 	}
 	
-	@Test
+//	@Test
 	public void testCheckout() {
 		String username="AA" ; 
 		List<String> isbns = new ArrayList<>();
@@ -31,7 +34,7 @@ public class Test_Transaction {
 		
 		showStatus(username, isbns.get(0) , isbns.get(1));
 		try {
-			bookShopService.checkout(username, isbns);
+			cashier.checkout(username, isbns);
 		}catch(Exception e) {
 			System.out.println(e);
 		}
@@ -40,7 +43,7 @@ public class Test_Transaction {
 	}
 	
 	
-	//@Test
+	@Test
 	public void testPurchaseBook() {
 		String username  = "AA" ; 
 		String isbn = "1001" ; 

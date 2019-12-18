@@ -7,5 +7,5 @@ import java.util.List;
  */
 public interface BookShopService {
 	public void purchaseBook( String username , String isbn) ;
-	public void checkout(String username , List<String> isbns) ;
+
 }
