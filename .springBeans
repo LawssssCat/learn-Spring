@@ -9,6 +9,11 @@
 	<configs>
 		<config>src/main/resources/vedio/beans-aop-annotation.xml</config>
 		<config>src/main/resources/vedio/beans-aop-xml.xml</config>
+		<config>src/main/resources/book/h_applicationContext-constructor.xml</config>
+		<config>src/main/resources/book/h_applicationContext-constructor2.xml</config>
+		<config>src/main/resources/book/h_applicationContext-annotation.xml</config>
+		<config>src/main/resources/vedio/applicationContext-jdbc.xml</config>
+		<config>src/main/resources/vedio/applicationContext-bookshop.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
