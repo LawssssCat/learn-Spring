@@ -10,7 +10,7 @@ public interface BookShopDao {
 	/**
 	 * 查询库存
 	 */
-	public int findBookStockPriceByIsbn(String isbn)  ; 
+	public int findBookStockByIsbn(String isbn)  ; 
 	/**
 	 * 库存减一
 	 */
@@ -21,11 +21,11 @@ public interface BookShopDao {
 	public void updateBookStockUpByIsbn(String isbn) ; 
 	
 	/**
-	 * 增加用户预付款
+	 * 扣除用户余额
 	 */
 	public void updateUserAccount(String username , int price) ;
 	/**
-	 * 查询用户预付款
+	 * 查询用户余额
 	 */
 	public int findUserBalanceByUsername(String username) ;
 	

@@ -13,6 +13,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import vedio.dao.BookShopDao;
 
+/**
+ * 1. 事务Dao准备
+ * 2. 事务绑定 
+ *
+ */
 public class Test_BookShop {
 	
 	private ClassPathXmlApplicationContext ctx = null ;
@@ -25,6 +30,10 @@ public class Test_BookShop {
 		bookShopDao = ctx.getBean(BookShopDao.class) ; 
 	}
 	
+	
+	
+	
+	
 	/**
 	 * 测试：stock查询、增、删
 	 */
@@ -32,12 +41,16 @@ public class Test_BookShop {
 	public void testBookStock() {
 		int stock = 0 ; 
 		String isbn = "1001";
+		//查stock
+		System.out.println("现有库存="+bookShopDao.findBookStockByIsbn(isbn)  );
 		
-		System.out.println("现有库存="+bookShopDao.findBookStockPriceByIsbn(isbn)  );
+		//stock-1
 		bookShopDao.updateBookStockDownByIsbn(isbn);
-		System.out.println("库存-1="+bookShopDao.findBookStockPriceByIsbn(isbn)  );
+		System.out.println("库存-1="+bookShopDao.findBookStockByIsbn(isbn)  );
+		
+		//stock+1
 		bookShopDao.updateBookStockUpByIsbn(isbn);
-		System.out.println("库存+1="+bookShopDao.findBookStockPriceByIsbn(isbn)  );
+		System.out.println("库存+1="+bookShopDao.findBookStockByIsbn(isbn)  );
 	}
 	
 	/**
@@ -46,12 +59,12 @@ public class Test_BookShop {
 	@Test
 	public void testUpdateUserAccount() {
 		String username = "AA";
-		System.out.println("原预付款："+bookShopDao.findUserBalanceByUsername(username ));
+		System.out.println("现有余额："+bookShopDao.findUserBalanceByUsername(username ));
 		String isbn = "1001" ; 
 		int price = bookShopDao.findBookPriceByIsbn(isbn) ;
 		bookShopDao.updateUserAccount(username, price );
 		System.out.println("购书价格："+price);
-		System.out.println("现预付款："+bookShopDao.findUserBalanceByUsername(username ));
+		System.out.println("扣除后余额："+bookShopDao.findUserBalanceByUsername(username ));
 	}
 
 	/**
