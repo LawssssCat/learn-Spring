@@ -27,11 +27,15 @@ public class BookShopServiceImp implements BookShopService {
 	 * 		如果有事务在运行，就应该先挂起它
 	 * 3. 。。。。。
 	 * 4. 使用 readOnly 指定事务是否为只读。（如果只是只读，可以不加锁）
+	 * 		表示这个事务只读数据包但是不更新数据。
+	 * 		这样可以帮助数据库引擎优化事务。
+	 * 5. 使用 timeout 指定强制回滚之前，事务可以占用的时间（秒）
 	 */
 	@Transactional(propagation = Propagation.REQUIRES_NEW , 
 			isolation = Isolation.READ_COMMITTED , 
 			noRollbackFor = {UserBalanceException.class} , 
-			readOnly = false) 
+			readOnly = false , 
+			timeout = 3) 
 	@Override
 	public void purchaseBook(String username, String isbn) {
 		//1. 书单价
