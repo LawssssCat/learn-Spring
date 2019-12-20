@@ -17,6 +17,8 @@
 		<config>src/main/resources/book/h_application-parent.xml</config>
 		<config>src/main/resources/book/h_application-child.xml</config>
 		<config>src/main/resources/book/h_collection.xml</config>
+		<config>src/main/resources/book/methodlookup/h_aplicationContext-methodInjection.xml</config>
+		<config>src/main/resources/book/methodlookup/h_aplicationContext-methodInjection-annotation.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
