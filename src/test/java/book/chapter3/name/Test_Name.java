@@ -1,5 +1,6 @@
 package book.chapter3.name;
 
+import java.util.Arrays;
 import java.util.Map;
 
 import org.junit.Test;
@@ -18,6 +19,11 @@ public class Test_Name {
 		Map<String, String> map = gtx.getBeansOfType(String.class);
 		map.entrySet().forEach(e -> System.out.println(
 				e.getKey() + ":" + e.getValue()));
-		gtx.close();
+	}
+	
+	@Test
+	public void testAliasName() {
+		String[] aliases = gtx.getAliases("string1");
+		System.out.println(Arrays.toString(aliases));
 	}
 }
