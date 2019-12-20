@@ -3,9 +3,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="string1"  name="fuck! you,mother;every" class="java.lang.String">
+<bean id="string1"  name="f**k! you,mother;every" class="java.lang.String">
 </bean>
 <alias name="string1" alias="day"/>
-<bean name="string2" class="java.lang.String"/>
+<bean name="string2" class="java.lang.String" />
 <bean  class="java.lang.String"/>
+
+<bean id="a A,aa;AA bb" name="QQ" class="book.chapter3.name.A"></bean>
+<bean name="a A,aa;AA bb" class="book.chapter3.name.A"></bean>
+<bean id="a A,aa;AA" class="book.chapter3.name.A"/>
+
+
 </beans>
