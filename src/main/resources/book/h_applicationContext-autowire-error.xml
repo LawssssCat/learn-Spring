@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="fooOne" class="book.chapter3.autowire.Foo" />
+<bean id="fooTwo" class="book.chapter3.autowire.Foo" />
+<bean id="barOne" class="book.chapter3.autowire.Bar"/>
+
+<bean id="byName" autowire="byName" class="book.chapter3.autowire.Target" lazy-init="true"/>
+<bean id="byType" autowire="byType" class="book.chapter3.autowire.Target" lazy-init="true"/>
+<bean id="constructor" autowire="constructor" class="book.chapter3.autowire.Target" lazy-init="true"/>
+
+</beans>
