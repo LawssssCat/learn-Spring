@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="l" class="book.chapter3.collection.LyricHolder"/>
+<bean id="c" class="book.chapter3.collection.CollectionInjuection" >
+	<property name="map">
+		<map>
+			<entry key="mapkey1" value="mapvalue1"/>
+			<entry key="mapkey2" value-ref="l"/>
+		</map>
+	</property>
+	<property name="props">
+		<props>
+			<!-- value只能是 String -->
+			<prop key="propertiesKey1">propertiesValue2</prop>
+		</props>
+	</property>
+	<property name="list">
+		<list> 
+			<value>listValue1</value>
+			 <ref bean="l"/>  
+		</list>
+	</property>	
+	<property name="set">
+		<set>
+			<value>setValue1</value>
+			 <ref bean="l"/> 
+		</set>
+	</property>
+</bean>
+</beans>
