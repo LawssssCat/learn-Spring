@@ -7,20 +7,12 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/resources/vedio/beans-aop-annotation.xml</config>
-		<config>src/main/resources/vedio/beans-aop-xml.xml</config>
-		<config>src/main/resources/book/h_applicationContext-constructor.xml</config>
-		<config>src/main/resources/book/h_applicationContext-constructor2.xml</config>
-		<config>src/main/resources/book/h_applicationContext-annotation.xml</config>
-		<config>src/main/resources/vedio/applicationContext-jdbc.xml</config>
-		<config>src/main/resources/vedio/applicationContext-bookshop.xml</config>
-		<config>src/main/resources/book/h_application-parent.xml</config>
-		<config>src/main/resources/book/h_application-child.xml</config>
-		<config>src/main/resources/book/h_collection.xml</config>
-		<config>src/main/resources/book/methodlookup/h_aplicationContext-methodInjection.xml</config>
-		<config>src/main/resources/book/methodlookup/h_aplicationContext-methodInjection-annotation.xml</config>
-		<config>src/main/resources/book/name/name_getBeansOfType.xml</config>
-		<config>src/main/resources/book/h_applicationContext-autowire.xml</config>
+		<config>src/main/resources/book/chapter4/h_application-init-method.xml</config>
+		<config>src/main/resources/book/h_aa.xml</config>
+		<config>src/main/resources/book/chapter4/app-context-annotation.xml</config>
+		<config>src/main/resources/book/chapter4/app-context-xml.xml</config>
+		<config>src/main/resources/book/chapter4/app-context-a.xml</config>
+		<config>src/main/resources/book/chapter4/app-context-messagedigest.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
