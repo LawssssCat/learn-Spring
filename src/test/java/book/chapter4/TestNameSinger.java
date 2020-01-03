@@ -2,12 +2,6 @@ package book.chapter4;
 
 import org.junit.Test;
 import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.core.SimpleAliasRegistry;
-
-import com.mchange.v2.log.log4j.Log4jMLog;
-
-import lombok.extern.log4j.Log4j;
-import lombok.extern.slf4j.Slf4j;
 
 public class TestNameSinger {
 
@@ -37,5 +31,5 @@ public class TestNameSinger {
 		FullName name = bean.getName();
 		System.out.println(name);
 	}
-	
+		
 }
