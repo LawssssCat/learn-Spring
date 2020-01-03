@@ -12,6 +12,7 @@ public class AccessingFactoryDemo {
 		gcx.load("classpath:book/chapter4/app-context-messagedigest.xml");
 		gcx.refresh(); 
 		
+		
 		String[] names = gcx.getBeanDefinitionNames();
 		for (String name : names) {
 			System.out.println(name);
