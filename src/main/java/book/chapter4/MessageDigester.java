@@ -2,7 +2,9 @@ package book.chapter4;
 
 import java.security.MessageDigest;
 
-public class MessageDigester {
+import org.springframework.beans.factory.DisposableBean;
+
+public class MessageDigester implements DisposableBean {
 	
 	private MessageDigest messageDigest1 ; 
 	private MessageDigest messageDigest2 ;
@@ -27,6 +29,10 @@ public class MessageDigester {
 		byte[] bytes = msg.getBytes();
 		byte[] out = messageDigest.digest(bytes);
 		System.out.println(out);
+	}
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("### @@@ ------- MessageDigester destory ... ");
 	}
 	
 	

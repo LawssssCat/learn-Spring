@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+<bean id="customEditorConfigurer" class="org.springframework.beans.factory.config.CustomEditorConfigurer" 
+p:propertyEditorRegistrars-ref="propertyEditorRegistrarsList" />
+
+<util:list id="propertyEditorRegistrarsList">
+	<bean class="book.chapter4.PropertyEditorBean$CustomPropertyEditorRegistrar"/>
+</util:list>
+
+<bean id="builtInSample" class="book.chapter4.PropertyEditorBean"
+p:character="A" 
+p:bytes="John Mayer"
+p:cls="#{customEditorConfigurer.class}" 
+p:trueOrFalse="#{1==1}"
+p:stringList-ref="stringList"
+p:floatValue="123.45678"
+p:date="05/03/13" 
+p:locale="en_US"
+p:pattern="a*b" 
+p:properties="name=Chris age=32"
+p:trimString=" String need trimming #{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt "
+p:file="#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"
+p:stream="classpath:test.txt" 
+p:url="https://spring.io/"
+/>
+<!-- 
+ -->
+ 
+<util:list id="stringList">
+	<value>String number 1</value>
+	<value>String number 2</value>
+</util:list>
+
+</beans>

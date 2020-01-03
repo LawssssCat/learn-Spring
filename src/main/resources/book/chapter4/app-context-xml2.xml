@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean name="shaDigestfactory" class="book.chapter4.MessageDigestFactory2" 
+ p:algorithmName="SHA1" />
+<bean name="defaultDigestfactory" class="book.chapter4.MessageDigestFactory2" />
+
+
+<bean id="shaDigest" factory-bean="shaDigestfactory" factory-method="createInstance" 
+ />
+<bean id="defaultDigest" factory-bean="defaultDigestfactory" factory-method="createInstance" />
+
+<bean id="digester" class="book.chapter4.MessageDigester" 
+p:messageDigest1-ref="shaDigest" 
+p:messageDigest2-ref="defaultDigest" />
+
+<bean class="book.chapter4.ShutdownHookBean" />
+
+</beans>

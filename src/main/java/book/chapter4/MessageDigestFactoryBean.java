@@ -28,7 +28,7 @@ implements FactoryBean<MessageDigest> , InitializingBean {
 	
 	@Override
 	public boolean isSingleton() {
-		return true ; 
+		return false ; 
 	}
 
 	@Override
