@@ -18,6 +18,7 @@
 		<config>src/main/resources/book/chapter4/app-config-02.xml</config>
 		<config>src/main/resources/book/chapter4/messagesource/app-config-messagesource.xml</config>
 		<config>src/main/resources/book/chapter4/messagesource/app-config-applicationevent.xml</config>
+		<config>src/main/resources/book/chapter4/configure/app-context-reader$provider.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
